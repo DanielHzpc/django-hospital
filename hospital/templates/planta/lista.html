@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>Lista de plantas</h2>
+<a href="{% url 'agregar_planta' %}" class="btn btn-success mb-3">Agregar planta</a>
+<table class="table table-bordered">
+    <tr>
+        <th>Nombre</th>
+        <th>Numero Camas</th>
+        <th>Acciones</th>
+    </tr>
+    {% for planta in plantas %}
+    <tr>
+        <td>{{ planta.nombre }}</td>
+        <td>{{ planta.numeroCamas }}</td>
+        <td>
+            <a href="{% url 'editar_planta' planta.id %}" class="btn btn-warning btn-sm">Editar</a>
+            <a href="{% url 'eliminar_planta' planta.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
