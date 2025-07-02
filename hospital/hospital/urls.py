@@ -27,4 +27,6 @@ urlpatterns = [
     path('plantas/agregar/',views.agregar_planta, name= 'agregar_planta'),
     path('plantas/editar/<int:id>/',views.editar_planta, name= 'editar_planta'),
     path('plantas/eliminar/<int:id>/',views.eliminar_planta, name= 'eliminar_planta'),
+    path('plantas/reporte/pdf/',views.generar_reporte_pdf, name='reporte_pdf'),
+    path('plantas/dashboard/', views.dashboard_planta, name='dashboard_planta')
 ]

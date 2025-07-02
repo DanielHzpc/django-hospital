@@ -14,6 +14,12 @@
                 {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'lista_planta' %}">Plantas</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a></li>
+                
+                
+                <a href="{% url 'reporte_pdf' %}" class="btn btn-outline-danger">Exportar PDF</a>
+                <a href="{% url 'dashboard_planta' %}" class="btn btn-outline-info">Ver Dashboard</a>
+
+
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrarse</a></li>

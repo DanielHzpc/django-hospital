@@ -1,0 +1,38 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML -->
+<html>
+<head>
+    <meta charset="utf-8"> <!-- Configuración de la codificación de caracteres -->
+    <style>
+        h1 { text-align: center; }
+        table {
+            width: 100%; /* La tabla ocupa todo el ancho disponible */
+            border-collapse: collapse; /* Colapsa los bordes de la tabla */
+            margin-top: 20px; /* Espacio superior de la tabla */
+        }
+        th, td {
+            border: 1px solid #444; /* Borde de las celdas */
+            padding: 6px; /* Espaciado interno de las celdas */
+            text-align: left; /* Alineación del texto a la izquierda */
+        }
+    </style>
+</head>
+<body>
+    <h1>Reporte de las Plantas</h1> <!-- Título principal de la página -->
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th> <!-- Encabezado de columna: Nombre -->
+                <th>Numero de Camas</th> 
+            </tr>
+        </thead>
+    <tbody>
+        {% for planta in plantas %} <!-- Inicio del bucle para recorrer los productos -->
+        <tr>
+            <td>{{ planta.nombre }}</td> <!-- Celda con el nombre del producto -->
+            <td>{{ planta.numeroCamas }}</td> <!-- Celda con la descripción del producto -->
+        </tr>
+        {% endfor %} <!-- Fin del bucle de productos -->
+    </tbody>
+</table>
+</body>
+</html>
